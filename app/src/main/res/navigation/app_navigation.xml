@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.chatversiontfg.homeModule.HomeFragment"
+        android:label="@string/text_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/location"
+        android:name="com.example.chatversiontfg.locationModule.Location"
+        android:label="@string/text_location"
+        tools:layout="@layout/fragment_location" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/allEvents"
+        android:name="com.example.chatversiontfg.allEventsModule.AllEventsFragment"
+        android:label="@string/text_allEvents"
+        tools:layout="@layout/fragment_all_events" />
+
+    <fragment
+        android:id="@+id/contact"
+        android:name="com.example.chatversiontfg.contactModule.ContactoFragment"
+        android:label="@string/text_contact"
+        tools:layout="@layout/fragment_contacto" />
+
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.chatversiontfg.aboutModule.AboutFragment"
+        android:label="@string/text_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/my_tickets"
+        android:name="com.example.chatversiontfg.myTicketModule.MyTicketFragment"
+        android:label="@string/text_my_tickets"
+        tools:layout="@layout/fragment_my_ticket" />
+
+    <fragment
+        android:id="@+id/my_events"
+        android:name="com.example.chatversiontfg.myListModule.MyListFragment"
+        android:label="@string/text_my_list"
+        tools:layout="@layout/fragment_my_list" />
+
+    <fragment
+        android:id="@+id/partners"
+        android:name="com.example.chatversiontfg.partnersFragmentModule.PartnersFragment"
+        android:label="@string/text_partners"
+        tools:layout="@layout/fragment_partners" />
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.chatversiontfg.profileModule.ProfileFragment"
+        android:label="@string/text_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

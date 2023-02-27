@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+
+        android:id="@+id/menu_options"
+        android:title="@string/menu_options"
+        android:icon="@drawable/ic_options"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+
+                android:id="@+id/menu_log_out"
+                android:title="@string/txt_cerrar_sesión"
+                android:icon="@drawable/ic_login"/>
+
+            <item
+                android:id="@+id/menu_profile"
+                android:title="@string/txt_profile"
+                android:iconTint="@color/rojo"
+                android:icon="@drawable/ic_baseline_person_outline_24"/>
+
+        </menu>
+
+    </item>
+
+</menu>

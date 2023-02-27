@@ -1,0 +1,91 @@
+package com.example.chatversiontfg.myListModule.adapter
+
+import android.annotation.SuppressLint
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.chatversiontfg.R
+import com.example.chatversiontfg.common.entities.EventoEntity
+import com.example.chatversiontfg.common.utils.listeners.EventoListener
+import com.example.chatversiontfg.databinding.ItemMyEventsBinding
+
+class MyListEventsAdapter(var eventos: MutableList<EventoEntity>, private var listener: EventoListener) : RecyclerView.Adapter<MyListEventsAdapter.ViewHolder>() {
+
+    private lateinit var fragmentContext: Context
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
+        fragmentContext = parent.context
+
+        val view = LayoutInflater.from(fragmentContext).inflate(R.layout.item_my_events, parent, false)
+
+        return ViewHolder(view)
+
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        val evento = eventos[position]
+
+        with(holder) {
+
+            setListenerEvents(evento)
+
+            with(bindingEvents) {
+
+                nombreEvento.text = evento.nombre
+                horaInicio.text = evento.horaInicio
+
+            }
+
+            Glide.with(fragmentContext)
+                .load(evento.imagen)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
+                .into(bindingEvents.img)
+
+        }
+
+    }
+
+    override fun getItemCount(): Int = eventos.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setFilteredList(filteredList: MutableList<EventoEntity>) {
+
+        eventos = filteredList
+
+        notifyDataSetChanged()
+
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setEvento(eventos: MutableList<EventoEntity>) {
+
+        this.eventos = eventos
+
+        notifyDataSetChanged()
+
+    }
+
+    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+
+        val bindingEvents = ItemMyEventsBinding.bind(view)
+
+        fun setListenerEvents(eventoEntity: EventoEntity) {
+
+            bindingEvents.root.setOnClickListener {
+
+                listener.onClickEvento(eventoEntity)
+
+            }
+
+        }
+
+    }
+
+}
