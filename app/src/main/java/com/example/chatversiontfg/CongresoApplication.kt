@@ -3,6 +3,7 @@ package com.example.chatversiontfg
 import android.app.Application
 import com.example.chatversiontfg.common.database.CongresoAPI
 import com.example.chatversiontfg.common.entities.*
+import com.google.firebase.auth.FirebaseAuth
 import java.util.Stack
 
 class CongresoApplication : Application() {
@@ -15,6 +16,7 @@ class CongresoApplication : Application() {
         lateinit var asistente : AsistenteEntity
         lateinit var restaurante : RestauranteEntity
         var idEvento: Long? = 0L
+        var idActividad: Long? = 0L
         lateinit var bonos: MutableList<BonoEntity>
 
         var socio : Boolean = false
@@ -27,7 +29,6 @@ class CongresoApplication : Application() {
         lateinit var socioId: String
         lateinit var nombreChat: String
         lateinit var imagenChat: String
-        var status = false
 
     }
 

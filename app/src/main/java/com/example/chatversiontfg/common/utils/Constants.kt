@@ -21,6 +21,7 @@ object Constants {
     const val GET_ASISTENTE_EVENTOS_PATH = "/asistente/{id_asistente}/eventos"
 
     const val GET_ACTIVIDADES_PATH = "/actividades"
+    const val GET_ACTIVIDAD_PATH = "/actividad/{id}"
 
     const val GET_RESTAURANTE_PATH = "/puestoComida/{id_puesto_comida}"
     const val GET_RESTAURANTES_PATH = "/puestosComida"

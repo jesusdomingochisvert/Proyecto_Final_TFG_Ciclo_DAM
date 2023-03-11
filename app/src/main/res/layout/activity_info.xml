@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cv_dialog_dimension"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/dimension30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cv_dialog_dimension">
+
+            <ImageView
+                android:id="@+id/img_actividad"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/img_dialog_dimension"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                style="@style/DialogCorners"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dimension20dp"
+                android:backgroundTint="#94FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/containerDialogActividad">
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerDialogActividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/dialog_redondo">
+                <TextView
+                    android:id="@+id/titulo_actividad"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimension10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="NOMBRE DEL EVENTO">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/hora"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/text_size_16"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titulo_actividad"
+                    tools:text="HORARIO">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/descripcion_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Descripcion"
+                    android:layout_marginStart="@dimen/dimension10dp"
+                    app:autoSizeTextType="uniform"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    app:layout_constraintTop_toBottomOf="@id/hora">
+                </TextView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_asistir"
+                    android:layout_width="@dimen/dimension100dp"
+                    android:layout_height="@dimen/dimension60dp"
+                    android:layout_marginBottom="@dimen/dimension10dp"
+                    android:layout_marginTop="@dimen/dimension20dp"
+                    android:text="@string/btn_asistir_txt"
+                    app:cornerRadius="@dimen/radius15"
+                    app:layout_constraintTop_toBottomOf="@id/descripcion_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:backgroundTint="@color/rojo"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="@dimen/dimension70dp"
+                android:layout_height="@dimen/dimension70dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible">
+            </ProgressBar>
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="@dimen/dimension50dp"
+                android:layout_height="@dimen/dimension50dp"
+                android:background="@null"
+                android:src="@drawable/ic_back">
+            </ImageButton>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.core.widget.NestedScrollView>

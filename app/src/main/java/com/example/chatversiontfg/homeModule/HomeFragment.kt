@@ -25,6 +25,7 @@ import com.example.chatversiontfg.common.utils.listeners.EventoListener
 import com.example.chatversiontfg.common.utils.listeners.RestauranteListener
 import com.example.chatversiontfg.homeModule.adapter.HomeActividadListAdapter
 import com.example.chatversiontfg.restauranteInfoModule.RestauranteInfoActivity
+import com.example.chatversiontfg.activityInfoModule.ActivityInfoActivity
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
 
 class HomeFragment : Fragment(), EventoListener,RestauranteListener,ActividadListener {
@@ -164,7 +165,7 @@ class HomeFragment : Fragment(), EventoListener,RestauranteListener,ActividadLis
 
     override fun onClickActividad(actividadEntity: ActividadEntity) {
 
-        val intent = Intent(fragmentContext, EventoInfoActivity::class.java)
+        val intent = Intent(fragmentContext, ActivityInfoActivity::class.java)
 
         intent.putExtra("id", actividadEntity.id)
 

@@ -23,6 +23,9 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth.AuthStateListener
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.net.UnknownHostException
 import java.util.*
 
@@ -32,6 +35,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private lateinit var authStateListener: AuthStateListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -67,10 +72,12 @@ class LoginActivity : AppCompatActivity() {
             val id = r.getString("id_usuario","")
             CorrutinaClass().executeAction(this@LoginActivity) {
                 CongresoApplication.asistente = LoginMethods().getAsistente(id!!.toLong())
+                CongresoApplication.email = CongresoApplication.asistente.correo
+                CongresoApplication.pwd = CongresoApplication.asistente.contrasenya
                 comprobarSocio(CongresoApplication.asistente)
                 generarBonos()
+                entrar()
             }
-            entrar()
         }
     }
 
@@ -115,16 +122,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun entrar() {
-
-        if (firebaseAuth.currentUser != null) {
-
-            CongresoApplication.status = true
-
-        } else {
-
-            CongresoApplication.status = false
-
-        }
 
         firebaseAuth.signInWithEmailAndPassword(CongresoApplication.email, CongresoApplication.pwd)
             .addOnCompleteListener { task ->

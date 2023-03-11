@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 android:hint="@string/text_salida"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/black"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -51,7 +51,7 @@
                     android:id="@+id/tiet_salida"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/black"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/til_salida"
                 android:hint="@string/text_lugares"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/black"
                 app:startIconDrawable="@drawable/ic_places"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
@@ -73,7 +73,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:inputType="none"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     tools:text="@string/text_restaurantes"/>
 
             </com.google.android.material.textfield.TextInputLayout>

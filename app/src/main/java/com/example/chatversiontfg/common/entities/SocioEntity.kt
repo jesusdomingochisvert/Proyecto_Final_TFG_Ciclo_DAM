@@ -5,7 +5,7 @@ data class SocioEntity(
     var idSocio: Long,
     var cargo:String = "",
     var asistente : AsistenteEntity,
-    var empresa : EmpresaEntity
+    var empresa : EmpresaEntity,
 
 )
 

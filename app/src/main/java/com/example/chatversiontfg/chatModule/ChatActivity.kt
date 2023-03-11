@@ -51,20 +51,6 @@ class ChatActivity : AppCompatActivity() {
 
         ImageClass().loadImage(CongresoApplication.imagenChat, binding.profileChat, this)
 
-        if (CongresoApplication.status == true) {
-
-            binding.statusProfileChat.text = "Online"
-
-            binding.statusProfileChat.visibility = View.VISIBLE
-
-        } else {
-
-            binding.statusProfileChat.text = "Offline"
-
-            binding.statusProfileChat.visibility = View.INVISIBLE
-
-        }
-
         binding.fabSendMsg.setOnClickListener { sendMessage() }
 
         val chatRef = db.collection("chats").document(CongresoApplication.socioId)

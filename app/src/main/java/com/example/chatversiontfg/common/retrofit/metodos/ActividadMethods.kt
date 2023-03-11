@@ -13,4 +13,16 @@ class ActividadMethods {
 
         return actividades
     }
+
+    suspend fun getActividad(id:Long?) : ActividadEntity {
+
+        val service = RetrofitClass().getRetrofit().create(ActividadService::class.java)
+
+        val result = service.getActividad(id)
+
+        val actividadEntity = result.body()!!
+
+        return actividadEntity
+
+    }
 }

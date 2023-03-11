@@ -13,7 +13,6 @@ import java.text.DecimalFormat
 
 class EventoMethods {
 
-
     //EVENTOINFOACTIVITY
     suspend fun getEvento(id:Long?) : EventoEntity{
         val service = RetrofitClass().getRetrofit().create(EventoService::class.java)

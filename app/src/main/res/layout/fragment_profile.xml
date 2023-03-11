@@ -184,8 +184,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/common_margin_default"
             android:layout_marginBottom="@dimen/common_margin_default"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cvinfo"
+            app:layout_constraintBottom_toTopOf="@id/cvinfo"
+            android:backgroundTint="@color/white"
             android:src="@drawable/ic_edit"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

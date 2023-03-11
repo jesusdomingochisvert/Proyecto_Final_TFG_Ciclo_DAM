@@ -12,6 +12,7 @@ data class AsistenteEntity(
     var genero : String = "",
     var biografia : String = "",
     var correo : String = "",
-    var imagen : String = ""
+    var imagen : String = "",
+    var estado: String = ""
 
 )
